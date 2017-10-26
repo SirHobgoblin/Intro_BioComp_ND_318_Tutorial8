@@ -1,5 +1,13 @@
 #Exercise 8, Python question 1
 #10/13/17, MMD
+#What do we want to do? 
+#standardize all TX samples to CF.SFA.XXX 
+#standardize all FL samples to CF.GAI.XXX
+#Then
+#Extract the allel count for each SNP/individual (., replace with NA)
+#Create a new file CfloridaCounts.txt that will be the corrected version of Cflorida.vcf
+
+
 #import os and packages
 import os
 import pandas as pd
@@ -9,9 +17,18 @@ import scipy
 #set working directory
 os.chdir('C:\\Users\\jsh\\OneDrive\\github\\BioComp\\Intro_Biocomp_ND_318_Tutorial8\\')
 
+
+
 #Open files to read and write
 vcffile = open("Cflorida.vcf","r")
+line = line.strip() #stips \n
+line = vcffile.readline().strip() #advances to the next line and strips
+vcffile.close() #closes file, do we want this, yet?
+
+
 outfile = open("CfloridaCounts.txt","w")
+outfile.write(string + "\n") #appends line to file, but need to define string?
+outfile.close() #closes file
 
 #assign regex to variable name, or compile to variable name
 
