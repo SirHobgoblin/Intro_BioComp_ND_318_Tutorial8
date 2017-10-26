@@ -14,6 +14,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import scipy
+import re
 #set working directory
 os.chdir('C:\\Users\\jsh\\OneDrive\\github\\BioComp\\Intro_Biocomp_ND_318_Tutorial8\\')
 
@@ -30,7 +31,10 @@ outfile = open("CfloridaCounts.txt","w")
 outfile.write(string + "\n") #appends line to file, but need to define string?
 outfile.close() #closes file
 
+
+
 #assign regex to variable name, or compile to variable name
+dict= {}
 
 #loop over file
 for :#look at old code to see how you looped over a file
@@ -44,6 +48,8 @@ for :#look at old code to see how you looped over a file
         #replace full SNP info with allele counts only
         #replace missing data with NA
         #write new version of line to new file
+        
+#Going to try and make the above for loop
         
 #Close files
 
