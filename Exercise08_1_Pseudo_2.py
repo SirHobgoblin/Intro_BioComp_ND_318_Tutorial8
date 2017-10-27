@@ -22,18 +22,22 @@ import re
 #set working directory
 os.chdir('C:\\Users\\jsh\\OneDrive\\github\\BioComp\\Intro_Biocomp_ND_318_Tutorial8\\')
 
-
+vcffile = open("Cflorida.vcf","r") #r appears to be optional, can at least read line by line with no r
+#line = vcffile.line.strip() #strips \n
+line = vcffile.readline().strip() #advances to the next line, stripping \n
+vcffile.close() #closes file
 
 #Open files to read and write
 vcffile = open("Cflorida.vcf","r")
 outfile = open('CfloridaCounts.txt','w')
 for line in vcffile:
     outfile.write(re.sub(r"[Cc][Ff](07)?\.[Aa]2?","Cf.Sfa",line,flags=re.M))
+    #outfile.write(line + '\n')
+    outfile.write(re.sub(r"[Cc][Ff](07)\.[Gg][2Aa]([Ii])?", "CF.Gai",line,flags=re.M))
     outfile.write(line + '\n')
-    vcffile.close()
-    outfile.close()
+    #outfile.close()
 
-    
+
     
 #outfile.write(re.sub(r"[Cc][Ff](07)\.[Gg][2Aa]([Ii])?",line,flags=re.M)) this is for FL
 
